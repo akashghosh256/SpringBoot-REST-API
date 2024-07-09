@@ -1,0 +1,31 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3307/cloud_vendor?useSSL=false
+    username : root
+    password :
+    # jpa settings
+  jpa:
+    hibernate:
+      ddl-auto: update
+  mvc:
+    path match:
+      matching-strategy: ANT_PATH_MATCHER
+
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+        exclude: "caches"
+      base-path: "/akashtest"
+  endpoint:
+    health:
+      show-details: always
+
+dummyService: { port: 8081, address: 127.0.0.1 }
+
+#logging:
+#  level:
+#    com.akash.rest_demo1.controller : DEBUG
+#    root: DEBUG
